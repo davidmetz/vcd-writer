@@ -516,16 +516,16 @@ VarValue VCDVectorVariable::change_record(const VarValue &value) const
 
     if (!val_sz) val = ('b' + std::string(_size, VCDValues::UNDEF) + ' ');
 
-    // align
-    else if (val_sz < _size)
-    {
-        val.reserve(_size + 2);
-        auto k = (_size - (val_sz - 1));
-        for (auto i = (val_sz - 1); i >= 1; --i)
-            val[k + i] = val[i];
-        for (auto i = 1u; i <= k; ++i)
-            val[i] = VCDValues::ZERO;
-    }
+//    // align
+//    else if (val_sz < _size)
+//    {
+//        val.reserve(_size + 2);
+//        auto k = (_size - (val_sz - 1));
+//        for (auto i = (val_sz - 1); i >= 1; --i)
+//            val[k + i] = val[i];
+//        for (auto i = 1u; i <= k; ++i)
+//            val[i] = VCDValues::ZERO;
+//    }
     return val;
 }
 
